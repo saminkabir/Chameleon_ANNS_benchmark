@@ -3,7 +3,7 @@ import pysvs as ps
 import numpy as np
 import math
 
-dataset_path = '/data/kabir/similarity-search/dataset/'
+dataset_path = '/home/cc/datasets/datasets/'
 
 def read_vecs(filePath):
     return ps.read_vecs(dataset_path + filePath)
