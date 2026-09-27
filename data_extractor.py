@@ -1,5 +1,5 @@
 
-import pysvs as ps
+import svs as ps
 import numpy as np
 import math
 
