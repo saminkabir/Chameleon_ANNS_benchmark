@@ -60,7 +60,7 @@ def flat_nav_test(dataset,max_edges_per_node=32,ef_construction = 100, ef_search
     info['ef_construction']=ef_construction
     info['ef_search']=ef_search
     info['I'] = indices
-    test_id='FLATNAV-'+dataset+'-'+str(max_edges_per_node)+'-'+str(ef_construction)+'-'+str(ef_search)+'.pkl'
+    # test_id='FLATNAV-'+dataset+'-'+str(max_edges_per_node)+'-'+str(ef_construction)+'-'+str(ef_search)+'.pkl'
     
     for i in range(2,6):
         search_start_time = time.time()
@@ -71,8 +71,8 @@ def flat_nav_test(dataset,max_edges_per_node=32,ef_construction = 100, ef_search
         info['search_timex'+str(i)]=search_end_time-search_start_time
         info['recallx'+str(i)]=r
         info['Ix'+str(i)] = indices
-    with open(pickle_path+test_id, 'wb') as f:
-        pickle.dump(info, f)
+    # with open(pickle_path+test_id, 'wb') as f:
+        # pickle.dump(info, f)
     print(info)
     return info
     
