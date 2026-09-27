@@ -962,5 +962,5 @@ def getNumberOfDuplicateItems(data_loader, dataset):
 
 [('Music',1000000,100,100),('Yelp',77079,50,100)]
 
-xb,xq,gt=get_data_generic('siftlarge')
-print('siftlarge', xb.shape, xq.shape, gt.shape)
+# xb,xq,gt=get_data_generic('siftlarge')
+# print('siftlarge', xb.shape, xq.shape, gt.shape)
