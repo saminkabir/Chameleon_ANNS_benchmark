@@ -140,7 +140,7 @@ def HNSW2(d, m, dataset_name, k = 100, ef_search = 8, ef_construction = 64, cpu=
     k = gt.shape[1]
     # set HNSW index parameters
     M = m  # number of connections each vertex will have
-    for sd in [1331,4566]:
+    for sd in [1331]:
         train_start_time = time.time();
         index = faiss.IndexHNSWFlat(d, M)
         # set efConstruction and efSearch parameters
@@ -177,9 +177,11 @@ def HNSW2(d, m, dataset_name, k = 100, ef_search = 8, ef_construction = 64, cpu=
             r = calculate_recall_at(gt, indices_1, k, k)
             dict['recallx'+str(i)]=r
             dict['Ix'+str(i)] = indices_1
-        test_id='HNSW-SEED-EXPERIMENT-'+dataset_name+'-'+str(m)+'-'+str(ef_construction)+'-'+str(ef_search)+'-'+str(cpu)+'-'+str(sd)+'.pkl'
-        with open(pickle_path+test_id, 'wb') as f:
-            pickle.dump(dict,f)
+    print(dict)
+
+        # test_id='HNSW-SEED-EXPERIMENT-'+dataset_name+'-'+str(m)+'-'+str(ef_construction)+'-'+str(ef_search)+'-'+str(cpu)+'-'+str(sd)+'.pkl'
+        # with open(pickle_path+test_id, 'wb') as f:
+        #     pickle.dump(dict,f)
 
 # def HNSW_GLASS(d, m, dataset_name, k = 100, ef_search = 8, ef_construction = 64):
 #     xb, xq, gt= get_data_common(dataset_name)
