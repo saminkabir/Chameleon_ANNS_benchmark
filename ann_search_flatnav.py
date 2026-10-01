@@ -43,7 +43,7 @@ def flat_nav_test(dataset,max_edges_per_node=32,ef_construction = 100, ef_search
         verbose=True,
         collect_stats=True,
     )
-    index.set_num_threads(1)
+    index.set_num_threads(128)
     search_start_time = time.time()
     index.add(data=dataset_to_index, ef_construction=ef_construction)
     search_end_time = time.time()
