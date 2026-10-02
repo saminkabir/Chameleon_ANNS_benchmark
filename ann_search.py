@@ -303,6 +303,7 @@ def NSG2(dataset_name, m, cpu, perams=[8, 16, 32, 64]):
     index.add(xb)
     train_end_time = time.time()
     Iss=[]
+    dictss=[]
     for refine in [1,2]:
         for search_L in perams:
             Is=[]
@@ -327,9 +328,8 @@ def NSG2(dataset_name, m, cpu, perams=[8, 16, 32, 64]):
                 dict['search_L'] = search_L
                 dict['refine'] = refine
                 dict['I'] = I_nsg
-                test_id='NSG-'+dataset_name+'-'+str(m)+'-'+str(search_L)+'-'+str(refine)+'-'+str(node)+'-'+str(cpu)+'.pkl'
-                with open(pickle_path+test_id, 'wb') as f:
-                    pickle.dump(dict, f)
+                dictss.append(dict)
+    print(dictss)
         
         
     
