@@ -1,0 +1,54 @@
+{'recall@': 0.90955, 'map@': 0.851235441049748, 'model_name': 'HNSW', 'dataset_name': 'movielens', 'search-time': 0.03998732566833496, 'training-time': 1.316352128982544, 'd': 150, 'm': 24, 'k': 20, 'ef_search': 12, 'ef_construction': 24, 'I': array([[ 9172,  5676,  7810, ...,  6641,  1613, 10480],
+       [ 8084,  1664,   732, ...,  4935,  3825,  4838],
+       [ 1906,  4659,  9971, ...,   192,  8880,  4600],
+       ...,
+       [ 9172,  1001,  3572, ...,  1557,  4587,  2126],
+       [10454,  2326,  2490, ...,   525,  6142,  1583],
+       [10497,  7024,  3019, ...,  6224,  5202,  1452]], shape=(1000, 20)), 'search_timex2': 0.042975425720214844, 'recallx2': 0.90955, 'Ix2': array([[ 9172,  5676,  7810, ...,  6641,  1613, 10480],
+       [ 8084,  1664,   732, ...,  4935,  3825,  4838],
+       [ 1906,  4659,  9971, ...,   192,  8880,  4600],
+       ...,
+       [ 9172,  1001,  3572, ...,  1557,  4587,  2126],
+       [10454,  2326,  2490, ...,   525,  6142,  1583],
+       [10497,  7024,  3019, ...,  6224,  5202,  1452]], shape=(1000, 20)), 'search_timex3': 0.04957985877990723, 'recallx3': 0.90955, 'Ix3': array([[ 9172,  5676,  7810, ...,  6641,  1613, 10480],
+       [ 8084,  1664,   732, ...,  4935,  3825,  4838],
+       [ 1906,  4659,  9971, ...,   192,  8880,  4600],
+       ...,
+       [ 9172,  1001,  3572, ...,  1557,  4587,  2126],
+       [10454,  2326,  2490, ...,   525,  6142,  1583],
+       [10497,  7024,  3019, ...,  6224,  5202,  1452]], shape=(1000, 20)), 'search_timex4': 0.05437493324279785, 'recallx4': 0.90955, 'Ix4': array([[ 9172,  5676,  7810, ...,  6641,  1613, 10480],
+       [ 8084,  1664,   732, ...,  4935,  3825,  4838],
+       [ 1906,  4659,  9971, ...,   192,  8880,  4600],
+       ...,
+       [ 9172,  1001,  3572, ...,  1557,  4587,  2126],
+       [10454,  2326,  2490, ...,   525,  6142,  1583],
+       [10497,  7024,  3019, ...,  6224,  5202,  1452]], shape=(1000, 20)), 'search_timex5': 0.051317453384399414, 'recallx5': 0.90955, 'Ix5': array([[ 9172,  5676,  7810, ...,  6641,  1613, 10480],
+       [ 8084,  1664,   732, ...,  4935,  3825,  4838],
+       [ 1906,  4659,  9971, ...,   192,  8880,  4600],
+       ...,
+       [ 9172,  1001,  3572, ...,  1557,  4587,  2126],
+       [10454,  2326,  2490, ...,   525,  6142,  1583],
+       [10497,  7024,  3019, ...,  6224,  5202,  1452]], shape=(1000, 20))}
+	Command being timed: "taskset --cpu-list 48-53 python ann_search_hnsw.py --dataset movielens --m 24 --ef_search 12 --ef_construction 24 --cpu 16"
+	User time (seconds): 9.86
+	System time (seconds): 0.38
+	Percent of CPU this job got: 231%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 117388
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 43736
+	Voluntary context switches: 5391
+	Involuntary context switches: 197877
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

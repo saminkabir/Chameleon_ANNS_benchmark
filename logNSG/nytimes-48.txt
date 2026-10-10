@@ -1,0 +1,24 @@
+Command terminated by signal 9
+	Command being timed: "taskset --cpu-list 143-143 python ann_search_nsg.py --dataset nytimes --m 48 --cpu 1"
+	User time (seconds): 67740.86
+	System time (seconds): 2.92
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:49:03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1263992
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 469395
+	Voluntary context switches: 1106
+	Involuntary context switches: 17622
+	Swaps: 0
+	File system inputs: 571928
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

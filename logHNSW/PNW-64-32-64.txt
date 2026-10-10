@@ -1,0 +1,59 @@
+{'recall@': 0.11983333333333333, 'map@': 0.09874369257978007, 'model_name': 'HNSW', 'dataset_name': 'PNW', 'search-time': 0.19896674156188965, 'training-time': 1073.8422176837921, 'd': 256, 'm': 64, 'k': 20, 'ef_search': 32, 'ef_construction': 64, 'I': array([[643243, 663192, 986502, ...,   9309,  65051, 935611],
+       [     0,      4,      7, ...,     86,     87, 512836],
+       [     0,      4,      7, ...,     86,     87, 512836],
+       ...,
+       [     0,      4,      7, ...,     86,     87, 512836],
+       [     0,      4,      7, ...,     86,     87, 512836],
+       [     0,      4,      7, ...,     86,     87, 512836]],
+      shape=(300, 20)), 'search_timex2': 0.2106952667236328, 'recallx2': 0.11983333333333333, 'Ix2': array([[643243, 663192, 986502, ...,   9309,  65051, 935611],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       ...,
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91]],
+      shape=(300, 20)), 'search_timex3': 0.2419600486755371, 'recallx3': 0.11983333333333333, 'Ix3': array([[643243, 663192, 986502, ...,   9309,  65051, 935611],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       ...,
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91]],
+      shape=(300, 20)), 'search_timex4': 0.3023185729980469, 'recallx4': 0.11983333333333333, 'Ix4': array([[643243, 663192, 986502, ...,   9309,  65051, 935611],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       ...,
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91]],
+      shape=(300, 20)), 'search_timex5': 0.35924196243286133, 'recallx5': 0.11983333333333333, 'Ix5': array([[643243, 663192, 986502, ...,   9309,  65051, 935611],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       ...,
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91],
+       [     0,      4,      7, ...,     86,     87,     91]],
+      shape=(300, 20))}
+	Command being timed: "taskset --cpu-list 125-125 python ann_search_hnsw.py --dataset PNW --m 64 --ef_search 32 --ef_construction 64"
+	User time (seconds): 1075.69
+	System time (seconds): 1.75
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:57.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2643312
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 13
+	Minor (reclaiming a frame) page faults: 417466
+	Voluntary context switches: 67
+	Involuntary context switches: 382
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

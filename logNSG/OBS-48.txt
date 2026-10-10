@@ -1,0 +1,24 @@
+Command terminated by signal 9
+	Command being timed: "taskset --cpu-list 123-123 python ann_search_nsg.py --dataset OBS --m 48 --cpu 1"
+	User time (seconds): 68096.58
+	System time (seconds): 7.75
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:55:19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4121904
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 1421056
+	Voluntary context switches: 3523
+	Involuntary context switches: 18633
+	Swaps: 0
+	File system inputs: 2008696
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
