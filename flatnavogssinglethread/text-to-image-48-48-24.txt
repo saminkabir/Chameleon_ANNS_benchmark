@@ -1,0 +1,73 @@
+Total allocated index memory: 1.036 GB 
+[WARN]: More memory might be allocated due to visited sets in multi-threaded environments.
+
+Index Parameters
+-----------------------------
+max_edges_per_node (M): 48
+data_size_bytes: 800
+node_size_bytes: 996
+max_node_count: 1000000
+cur_num_nodes: 0
+
+SquaredL2Distance Parameters
+-----------------------------
+Dimension: 200
+{'model': 'FlatNav', 'construction_time': 280.2280731201172, 'search_time': 0.05962562561035156, 'recall': 0.9499, 'max_edges_per_node': 48, 'ef_construction': 48, 'ef_search': 24, 'I': array([[ 89596, 843732,  45311, ..., 456762,  63838,  24455],
+       [253206, 469132, 185067, ..., 836758, 687896, 270949],
+       [807164,  81210, 487962, ...,  91489, 807848, 813612],
+       ...,
+       [297805, 641227,  67913, ..., 692031, 497118,  75908],
+       [ 18048, 125606, 995934, ..., 307770, 745125, 695411],
+       [ 21444, 301812, 392338, ..., 654829, 503856, 596225]],
+      shape=(100, 100), dtype=int32), 'search_timex2': 0.10001850128173828, 'recallx2': 0.9697, 'Ix2': array([[ 89596, 843732,  45311, ..., 456762,  63838,  24455],
+       [253206, 469132, 185067, ..., 836758, 687896, 270949],
+       [807164,  81210, 487962, ...,  91489, 807848, 813612],
+       ...,
+       [297805, 641227,  67913, ..., 692031, 497118,  75908],
+       [ 18048, 125606, 995934, ..., 307770, 745125, 695411],
+       [ 21444, 301812, 392338, ..., 654829, 503856, 596225]],
+      shape=(100, 100), dtype=int32), 'search_timex3': 0.13952970504760742, 'recallx3': 0.976, 'Ix3': array([[ 89596, 843732,  45311, ..., 456762,  63838,  24455],
+       [253206, 469132, 185067, ..., 836758, 687896, 270949],
+       [807164,  81210, 487962, ...,  91489, 807848, 813612],
+       ...,
+       [297805, 641227,  67913, ..., 692031, 497118,  75908],
+       [ 18048, 125606, 995934, ..., 307770, 745125, 695411],
+       [ 21444, 301812, 392338, ..., 654829, 503856, 596225]],
+      shape=(100, 100), dtype=int32), 'search_timex4': 0.1781322956085205, 'recallx4': 0.9783, 'Ix4': array([[ 89596, 843732,  45311, ..., 456762,  63838,  24455],
+       [253206, 469132, 185067, ..., 836758, 687896, 270949],
+       [807164,  81210, 487962, ...,  91489, 807848, 813612],
+       ...,
+       [297805, 641227,  67913, ..., 692031, 497118,  75908],
+       [ 18048, 125606, 995934, ..., 307770, 745125, 695411],
+       [ 21444, 301812, 392338, ..., 654829, 503856, 596225]],
+      shape=(100, 100), dtype=int32), 'search_timex5': 0.2158069610595703, 'recallx5': 0.9795, 'Ix5': array([[ 89596, 843732,  45311, ..., 456762,  63838,  24455],
+       [253206, 469132, 185067, ..., 836758, 687896, 270949],
+       [807164,  81210, 487962, ...,  91489, 807848, 813612],
+       ...,
+       [297805, 641227,  67913, ..., 692031, 497118,  75908],
+       [ 18048, 125606, 995934, ..., 307770, 745125, 695411],
+       [ 21444, 301812, 392338, ..., 654829, 503856, 596225]],
+      shape=(100, 100), dtype=int32)}
+	Command being timed: "python ann_search_flatnav.py --dataset text-to-image --max_edges_per_node 48 --ef_construction 48 --ef_search 24"
+	User time (seconds): 281.09
+	System time (seconds): 4.37
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:43.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1890580
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5
+	Minor (reclaiming a frame) page faults: 441535
+	Voluntary context switches: 189
+	Involuntary context switches: 643326
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
