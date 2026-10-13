@@ -291,7 +291,7 @@ def NSG(data_loader, d, m, dataset_name, k = 100, perams=[16, 32, 64]):
         dicts.append(dict)
     return dicts
 
-def NSG2(dataset_name, m, cpu, perams=[8, 16, 32, 64]):
+def NSG2(dataset_name, m, cpu, perams=[16, 32, 64,96]):
     xb, xq, gt= get_data_common(dataset_name)
     d = xb.shape[1]
     k = gt.shape[1]
