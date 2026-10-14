@@ -58,5 +58,6 @@ parser.add_argument("--dataset", type=str, required=True,
                     help="Name of the dataset (e.g. 'imageNet', 'glove-100')")
 
 args = parser.parse_args()
+os.chdir('/home/cc/datasets/datasets')
 genGroundTrouth(args.dataset)
 
