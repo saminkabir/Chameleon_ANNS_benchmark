@@ -1,6 +1,6 @@
 from pysvs import common
 import numpy as np
-import pysvs as ps
+import svs as ps
 import os
 import math
 from data_extractor import *
