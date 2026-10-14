@@ -19,5 +19,5 @@ args = parser.parse_args()
 faiss.omp_set_num_threads(args.cpu)
 os.environ["OPENBLAS_NUM_THREADS"] = str(args.cpu)
 
-NSG2(dataset_name=args.dataset,m=args.m,cpu=args.cpu)
+NSGIp(dataset_name=args.dataset,m=args.m,cpu=args.cpu)
     

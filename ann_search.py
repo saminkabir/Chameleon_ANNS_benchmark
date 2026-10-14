@@ -378,7 +378,7 @@ def NSG2(dataset_name, m, cpu, perams=[16, 32, 64,96]):
     print(dictss)
 
 def NSGIp(dataset_name, m, cpu, perams=[16, 32, 64,96]):
-    xb, xq, gt= get_data_common(dataset_name)
+    xb, xq, gt= get_data_generic(dataset_name)
     d = xb.shape[1]
     k = gt.shape[1]
     # set HNSW index parameters
