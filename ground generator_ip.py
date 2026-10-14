@@ -19,6 +19,7 @@ def genGroundTrouth(dataset, K=None, query_batch=64, out_name="groundtruth_ip.iv
     out_name    -- written next to the dataset; kept separate from the
                    L2 groundtruth.ivecs so that file is not overwritten
     """
+    os.chdir(dataset)
     base, query, groundtruth = get_data_generic(dataset)
     if K is None:
         K = groundtruth.shape[1]
@@ -45,7 +46,8 @@ def genGroundTrouth(dataset, K=None, query_batch=64, out_name="groundtruth_ip.iv
     print()
 
     out_dir = os.path.join(dataset_path, dataset)
-    common.write_vecs(ground_trouth, os.path.join(out_dir, out_name), skip_check=False)
+    common.write_vecs(ground_trouth, out_name, skip_check=False)
+    os.chdir('..')
     return ground_trouth
 
 
