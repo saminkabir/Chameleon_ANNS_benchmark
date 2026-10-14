@@ -17,4 +17,4 @@ parser.add_argument("--cpu", type=int, required=True,
 args = parser.parse_args()
 faiss.omp_set_num_threads(args.cpu)
 os.environ["OPENBLAS_NUM_THREADS"] = str(args.cpu)
-HNSW2(128,args.m,dataset_name=args.dataset,k=100,ef_search=args.ef_search,ef_construction=args.ef_construction, cpu=args.cpu)
+HNSWCIp(128,args.m,dataset_name=args.dataset,k=100,ef_search=args.ef_search,ef_construction=args.ef_construction, cpu=args.cpu)

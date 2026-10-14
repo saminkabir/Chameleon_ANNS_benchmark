@@ -135,7 +135,7 @@ def HNSW(data_loader, d, m, dataset_name, k = 100, ef_search = 8, ef_constructio
 
 
 def HNSWCIp(d, m, dataset_name, k = 100, ef_search = 8, ef_construction = 64, cpu=1):
-    xb, xq, gt= get_data_common(dataset_name)
+    xb, xq, gt= get_data_generic(dataset_name)
     d = xb.shape[1]
     k = gt.shape[1]
     # set HNSW index parameters
