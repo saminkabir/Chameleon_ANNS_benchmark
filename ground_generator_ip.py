@@ -1,4 +1,4 @@
-from pysvs import common
+from svs import common
 import numpy as np
 import svs as ps
 import os
