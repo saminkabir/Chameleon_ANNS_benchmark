@@ -134,6 +134,52 @@ def HNSW(data_loader, d, m, dataset_name, k = 100, ef_search = 8, ef_constructio
     return dict
 
 
+def HNSWCIp(d, m, dataset_name, k = 100, ef_search = 8, ef_construction = 64, cpu=1):
+    xb, xq, gt= get_data_common(dataset_name)
+    d = xb.shape[1]
+    k = gt.shape[1]
+    # set HNSW index parameters
+    M = m  # number of connections each vertex will have
+    for sd in [1331]:
+        train_start_time = time.time();
+        index = faiss.IndexHNSWFlat(d, M, faiss.METRIC_INNER_PRODUCT)
+        # set efConstruction and efSearch parameters
+        index.hnsw.efConstruction = ef_construction
+        index.hnsw.efSearch = ef_search
+        # add data to index
+        index.add(xb)
+        train_end_time = time.time();
+        search_start_time = time.time()
+        D_hnsw, I_hnsw = index.search(xq, k)
+        search_end_time = time.time();
+        r = calculate_recall_at(gt, I_hnsw, k, k)
+        dict = {}
+        dict['recall@'] = r
+        dict['map@'] = calculate_map_at(gt, I_hnsw, k)
+        dict['model_name'] = 'HNSW'
+        dict['dataset_name'] = dataset_name
+        dict['search-time'] =  search_end_time - search_start_time
+        dict['training-time'] =  train_end_time - train_start_time
+        dict['d'] = d
+        dict['m'] = m
+        dict['k'] = k
+        dict['ef_search'] = ef_search
+        dict['ef_construction'] = ef_construction
+        
+        dict['I'] = I_hnsw
+        for i in range(2,6):
+            search_start_time = time.time()
+            distances_1, indices_1 = index.search(xq, k*i)
+            search_end_time = time.time()
+            indices_1=refine_response(xq,xb,indices_1,k)
+            r = calculate_recall_at(gt, indices_1, k, k)
+            dict['search_timex'+str(i)]=search_end_time-search_start_time
+            r = calculate_recall_at(gt, indices_1, k, k)
+            dict['recallx'+str(i)]=r
+            dict['Ix'+str(i)] = indices_1
+    print(dict)
+
+
 def HNSW2(d, m, dataset_name, k = 100, ef_search = 8, ef_construction = 64, cpu=1):
     xb, xq, gt= get_data_common(dataset_name)
     d = xb.shape[1]
@@ -311,6 +357,46 @@ def NSG2(dataset_name, m, cpu, perams=[16, 32, 64,96]):
                 search_start_time = time.time()
                 index.nsg.search_L = search_L
                 index.nsg.enterpoint = node
+                D_nsg, I_nsg = index.search(xq, k)
+                I_nsg = refine_response(xq, xb, I_nsg, k)
+                search_end_time = time.time();
+                r = calculate_recall_at(gt, I_nsg, k, k)
+                dict = {}
+                dict['recall@'] = r
+                dict['map@'] = calculate_map_at(gt, I_nsg, k)
+                dict['model_name'] = 'NSG'
+                dict['dataset_name'] = dataset_name
+                dict['search-time'] =  search_end_time - search_start_time
+                dict['training-time'] =  train_end_time - train_start_time
+                dict['d'] = d
+                dict['m'] = m
+                dict['k'] = k
+                dict['search_L'] = search_L
+                dict['refine'] = refine
+                dict['I'] = I_nsg
+                dictss.append(dict)
+    print(dictss)
+
+def NSGIp(dataset_name, m, cpu, perams=[16, 32, 64,96]):
+    xb, xq, gt= get_data_common(dataset_name)
+    d = xb.shape[1]
+    k = gt.shape[1]
+    # set HNSW index parameters
+    M = m  # number of connections each vertex will have
+    train_start_time = time.time();
+    index = faiss.IndexNSGFlat(d, M, faiss.METRIC_INNER_PRODUCT)
+    # add data to index
+    index.add(xb)
+    train_end_time = time.time()
+    Iss=[]
+    dictss=[]
+    for refine in [1,2]:
+        for search_L in perams:
+            Is=[]
+            for node in range(1):
+                search_start_time = time.time()
+                index.nsg.search_L = search_L
+                # index.nsg.enterpoint = node
                 D_nsg, I_nsg = index.search(xq, k)
                 I_nsg = refine_response(xq, xb, I_nsg, k)
                 search_end_time = time.time();
