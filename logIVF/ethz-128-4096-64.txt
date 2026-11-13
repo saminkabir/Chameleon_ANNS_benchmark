@@ -1,0 +1,29 @@
+2026-11-13 03:03:15.221481: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2026-11-13 03:03:15.256591: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2026-11-13 03:03:15.257140: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-13 03:03:16.007683: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+WARNING clustering 36643 points to 4096 centroids: please provide at least 159744 training points
+	Command being timed: "taskset --cpu-list 8-8 python ann_search_ivf.py --dataset ethz --nlist 4096 --nprobe 64 --cpu 1"
+	User time (seconds): 33.15
+	System time (seconds): 0.43
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:33.59
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 589188
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 390
+	Minor (reclaiming a frame) page faults: 100780
+	Voluntary context switches: 374
+	Involuntary context switches: 67
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
