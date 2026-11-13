@@ -1520,3 +1520,51 @@ def analyzeVariance(data_loader, name):
 #         print("Fail to reject the null hypothesis: The variances are equal across the features, suitable for PCA.")
 #     return info
 
+def IVF(d, nlist, dataset_name, k=100, nprobe=8):
+    xb, xq, gt = get_data_generic(dataset_name)
+    d = xb.shape[1]
+    k = gt.shape[1]
+
+    # Set IVF index parameters
+    train_start_time = time.time()
+
+    quantizer = faiss.IndexFlatL2(d)
+    index = faiss.IndexIVFFlat(
+        quantizer,
+        d,
+        nlist,
+        faiss.METRIC_L2
+    )
+
+    # Train IVF index
+    index.train(xb)
+
+    # Add data to index
+    index.add(xb)
+
+    # Set nprobe parameter
+    index.nprobe = nprobe
+
+    train_end_time = time.time()
+
+    # Search
+    search_start_time = time.time()
+    D_ivf, I_ivf = index.search(xq, k)
+    search_end_time = time.time()
+
+    # Evaluation
+    r = calculate_recall_at(gt, I_ivf, k, k)
+
+    dict = {}
+    dict['recall@'] = r
+    dict['map@'] = calculate_map_at(gt, I_ivf, k)
+    dict['model_name'] = 'IVF'
+    dict['dataset_name'] = dataset_name
+    dict['search-time'] = search_end_time - search_start_time
+    dict['training-time'] = train_end_time - train_start_time
+    dict['d'] = d
+    dict['nlist'] = nlist
+    dict['k'] = k
+    dict['nprobe'] = nprobe
+
+    return dict
